@@ -1,0 +1,201 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>What is your Vietnamese food?</title>
+    <link rel="stylesheet" href="css/styles.css">
+
+
+</head>
+<body>
+     
+<div id = "box">
+    <h1> What does your birthday tells you about Vietnamese food ?</h1>
+    </div>
+    <h2> Enter your birthday. </h2>
+    <p>Month:<input type="number" id="month" min="1" max="12" ></p>
+    <p> Day:<input type="number" id="day" min="1" max="31"></p>
+    <a id="animated" onclick="zodiac()"  class="button">Find your Vietnamese food </a>
+
+    <script>
+        //MODAL (W3 SCHOOLS)//
+            var modal = document.getElementById('myModal');
+            var btn = document.getElementById("help");
+            var span = document.getElementsByClassName("close")[0];
+            btn.onclick = function () {
+            modal.style.display = "block";
+            }
+            span.onclick = function () {
+            modal.style.display = "none";
+            }
+
+            window.onclick = function (event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+    </script>
+    <div id="help" style="justify-self: right;"><img src="img/Food/flags-01.png" alt="Viet" width="100" height="100"></div>
+
+     <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+
+            <p>The site contains 12 different famous Vietnamese dishes.</p>
+            <p>Enter your birthday and press 'Find your Vietnamese food'.</p>
+            <p>Press the refresh button (<i class="fas fa-sync-alt"></i>) to begin again.</p>
+
+        </div>
+        
+
+    </div>
+    <p id="photo"></p>
+    <p id= "space"> Your Vietnamese food is <span id="output"></span> </p>
+    
+    <p id="characteristic"></p>
+
+    <script>
+
+        //I designed 4 pictures/12 pictures and wrote all contents by myself//
+        //Audio from: https://elements.envato.com///
+
+        function zodiac(){
+  var birthmonth = document.getElementById("month").value;
+   var birthday = document.getElementById("day").value;
+ var result = " unknown because you didn't put a valid date.";
+
+
+if (birthmonth == 1&& birthday >= 20 || birthmonth == 2 && birthday <= 18
+    ){
+        result = ("Pho");
+    document.getElementById("photo").innerHTML="<img src='img/Food/pho.png'width=50%>";
+    //Photo: Freepik//
+    document.getElementById("characteristic").innerHTML="Phở or pho is a Vietnamese soup consisting of broth, rice noodles, herbs, and meat – usually beef, sometimes chicken. Pho is a popular street food in Vietnam and served in restaurants around the world.";
+    var audio = new Audio('sounds/pho.mp3');
+    audio.play();
+
+  
+    }
+
+    if (birthmonth == 2&& birthday >= 19 || birthmonth == 3&& birthday <= 20){
+       result = ("Ca Phe Trung");
+       document.getElementById("photo").innerHTML="<img src='img/Food/caphetrung.png'width=50%>";
+      document.getElementById("characteristic").innerHTML="An egg coffee (Vietnamese: Cà phê trứng) is a Vietnamese drink traditionally prepared with egg yolks, sugar, condensed milk and robusta coffee.";
+      var audio = new Audio('sounds/caphetrung.mp3');
+        audio.play();
+      
+    }
+   if (birthmonth == 3&& birthday >= 21 || birthmonth == 4 && birthday <= 19){
+       result = ("Banh Cuon");
+        //Photo: Freepik//
+      document.getElementById("photo").innerHTML="<img src='img/Food/banhcuon.png'width=50%>";
+     document.getElementById("characteristic").innerHTML="It is made from a thin, wide sheet of steamed fermented rice batter filled with a mixture of cooked seasoned ground pork, minced wood ear mushroom, and minced shallots. Sides for this dish usually consist of cha lua (Vietnamese pork sausage), sliced cucumber, and bean sprouts, with the dipping sauce which is fish sauce.";
+     var audio = new Audio('sounds/banhcuon.mp3');
+        audio.play();
+   }
+  
+    if (birthmonth == 4&& birthday >= 20|| birthmonth == 5 && birthday <= 20){
+        result = ("Banh Mi");
+         //Photo: Freepik//
+       document.getElementById("photo").innerHTML="<img src='img/Food/banhmi.png'width=50%>";
+       document.getElementById("characteristic").innerHTML="A typical Vietnamese sandwich is a fusion of meats and vegetables from native Vietnamese cuisine such as pork sausage, coriander leaf (cilantro), cucumber, pickled carrots, and pickled daikon combined with condiments from French cuisine such as pâté, along with chili and mayonnaise.";
+       var audio = new Audio('sounds/banhmi.mp3');
+        audio.play();
+      
+    }
+  
+    if (birthmonth == 5&& birthday >= 21 || birthmonth == 6 && birthday <= 20
+     ){
+        result = ("Com Tam");
+       document.getElementById("photo").innerHTML="<img src='img/Food/comsuon.png'width=50%>";
+      document.getElementById("characteristic").innerHTML="Cơm tấm or com tam is a Vietnamese dish made from rice with fractured rice grains. Tấm refers to the broken rice grains, while cơm refers to cooked rice";
+      var audio = new Audio('sounds/comtam.mp3');
+        audio.play();
+     
+    }
+  
+    if (birthmonth == 6&& birthday >= 21 || birthmonth == 7&& birthday <= 22){
+        result = ("Goi Cuon");
+         //Photo: Freepik//
+       document.getElementById("photo").innerHTML="<img src='img/Food/goicuon.png'width=50%>";
+      document.getElementById("characteristic").innerHTML="The typical ingredients include slivers of cooked pork (most often pork sausages), shrimp, sometimes chicken or tofu, fresh herbs like basil or cilantro, lettuce, cucumbers, sometimes fresh garlic, chives, rice vermicelli, all wrapped in moistened rice paper.";
+      var audio = new Audio('sounds/goicuon.mp3');
+        audio.play();
+      
+    }
+    if (birthmonth == 7&& birthday >= 23 || birthmonth == 8 && birthday <= 22){
+        result = ("Bun Bo Hue");
+         //Photo: Freepik//
+       document.getElementById("photo").innerHTML="<img src='img/Food/bunbohue.png'width=50%>";
+            document.getElementById("characteristic").innerHTML="Bún bò originated in Huế, a former capital of Vietnam. Bún bò usually includes thin slices of marinated and boiled beef shank, chunks of oxtail, and pig's knuckles. It can also include cubes of congealed pig blood, which has a color between dark brown and maroon, and a texture resembling firm tofu.";
+            var audio = new Audio('sounds/bunbo.mp3');
+            audio.play();
+      
+    }
+    if (birthmonth == 8 && birthday >= 23 || birthmonth == 9 && birthday <= 22){
+        result = ("Ca Kho");
+         //Photo: Freepik//
+       document.getElementById("photo").innerHTML="<img src='img/Food/cakho.png'width=50%>";
+        document.getElementById("characteristic").innerHTML="In this Vietnamese staple, fish is braised in a claypot with sugar and fish sauce. The result is tender, moist, sweet and savory.";
+        var audio = new Audio('sounds/cakho.mp3');
+            audio.play();
+    }
+    if (birthmonth == 9&& birthday >= 23 || birthmonth == 10&& birthday <= 22){
+      result = ("Com Ga Xoi Mo");
+       document.getElementById("photo").innerHTML="<img src='img/Food/comga.png'width=50%>";
+        document.getElementById("characteristic").innerHTML="Com Ga Xoi Mo is a wonderfully unique street food restaurant in Saigon, that serves a combination plate of fried chicken and rice. Despite the fried chicken being a little on the greasy side, the fried chicken was pretty good, and the garlicky dark soy sauce dipping sauce went extremely well with the crispy chicken.";
+        var audio = new Audio('sounds/comga.mp3');
+            audio.play();
+    }
+    if (birthmonth == 10 && birthday >= 23|| birthmonth == 11 && birthday <= 21){
+       result = ("Hu Tiu Nam Vang");
+        //Photo: Freepik//
+       document.getElementById("photo").innerHTML="<img src='img/Food/hutiu.png'width=50%>";
+        document.getElementById("characteristic").innerHTML="Hu Tieu Nam Vang includes a good amount of soft rice noodles, topped with some slices of pork, liver, intestines, a quail egg, and finally a shrimp, all sprinkled with a touch of pepper, and some chopped green onions and cilantro.";
+        var audio = new Audio('sounds/hutiu.mp3');
+            audio.play();
+    }
+    if (birthmonth == 11 && birthday >= 22 || birthmonth == 12 && birthday <= 21){
+        result = ("Mi Quang");
+         //Photo: Freepik//
+       document.getElementById("photo").innerHTML="<img src='img/Food/miquang.png'width=50%>";
+        document.getElementById("characteristic").innerHTML="The main ingredients of Mi Quang are rice noodles, meat, and herbs, most commonly served with a small amount of broth, which is generally infused with turmeric. Wide rice noodles are placed atop of a bed of fresh herbs in a bowl (or vice versa), and then warm or lukewarm broth and meat are added.";
+        var audio = new Audio('sounds/miquang.mp3');
+            audio.play();
+    }
+  
+  if(birthmonth == 12 && birthday >= 22 || birthmonth == 1 && birthday <= 19){
+ 
+        result = ("Tre Tron");
+     document.getElementById("photo").innerHTML="<img src='img/Food/tre.png'width=50%>";
+     document.getElementById("characteristic").innerHTML="Tre Tron is a mixture of fried pork skin, spring rolls, parsley, sliced mango, cucumbers, fish sauces, pepper, and chilis. The taste is sour, juicy, and sweet. ";
+     var audio = new Audio('sounds/tretron.mp3');
+            audio.play();
+
+
+     
+    }else if (birthmonth>12||birthday>31 || birthmonth == 2& birthday >= 30 || birthmonth == 2& birthday >= 31){
+       alert("Please enter a valid birthday!");
+    }
+ document.getElementById("output").innerHTML= result;
+}
+  
+
+    </script>
+
+<img src="img/Food/pho.png" alt="Pho" width="440" height="360">
+<img src="img/Food/Miquang.png" alt="Mi Quang" width="440" height="360">
+<img src="img/Food/hutiu.png" alt="Hu Tiu" width="440" height="360">
+<img src="img/Food/bunbohue.png" alt="Bun Bo" width="440" height="360">
+<img src="img/Food/goicuon.png" alt="Goi Cuon" width="440" height="360">
+<img src="img/Food/tre.png" alt="Tre Tron" width="440" height="360">
+<img src="img/Food/comga.png" alt="Com Ga" width="440" height="360">
+<img src="img/Food/comsuon.png" alt="Com Tam" width="440" height="360">
+<img src="img/Food/banhcuon.png" alt="Banh Cuon" width="440" height="360">
+<img src="img/Food/banhmi.png" alt="Banh Mi" width="440" height="360">
+<img src="img/Food/caphetrung.png" alt="Ca Phe Trung" width="440" height="360">
+<img src="img/Food/cakho.png" alt="Ca Kho" width="440" height="360">
+    
+    
+    
